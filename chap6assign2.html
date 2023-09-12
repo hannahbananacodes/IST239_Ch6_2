@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6 Assignment 2</title>
+    <style>
+        body {
+            font-family: monospace;
+        }
+        pre {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body style="background-color: lightblue;">
+    <script type="text/javascript">
+    // collect user input
+        let vehiclePrice = parseFloat(window.prompt("Enter the vehicle price:"));
+        let downPayment = parseFloat(window.prompt("Enter down payment amount:"));
+        let interestRate = parseFloat(window.prompt("Enter the annual interest rate for the loan:"));
+
+
+    // calculations
+        let loanAmount = (vehiclePrice - downPayment);
+        let monthlyInterest = (interestRate / 1200);
+
+        function options(monthlyRate, numOfMonths, totalAmount)
+            {
+                var base = Math.pow(1+monthlyRate, numOfMonths)
+                var payment = (totalAmount*monthlyRate) / (1-(1/base));
+                return payment1 = payment;
+            }
+           
+    // outputs
+        document.write("<h1>Loan Calculator</h1>");
+        document.write("<p>Vehicle Price: $" + vehiclePrice.toFixed(2) + "<p>");
+        document.write("<p>Down Payment: $" + downPayment.toFixed(2) + "<p>");
+        document.write("<p>Interest Rate: " + interestRate + "%<p>");
+        document.write("<p>Loan Amount: $" + loanAmount.toFixed(2) + "<p>");
+
+        document.write("<pre>     # of Years         Payment/Month</pre>");
+
+    // loop
+        for (let i = 2; i < 8; i++)
+        {
+            let month = i * 12;
+            options(monthlyInterest,month,loanAmount);
+            document.write("<pre>          " + i + "               $" + 
+                payment1.toLocaleString("en-US", {'minimumFractionDigits': 2, 'maximumFractionDigits':2}) + "<br>");
+        }
+        
+
+    </script>
+</body>
+</html>
