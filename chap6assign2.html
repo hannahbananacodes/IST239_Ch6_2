@@ -34,10 +34,13 @@
            
     // outputs
         document.write("<h1>Loan Calculator</h1>");
-        document.write("<p>Vehicle Price: $" + vehiclePrice.toFixed(2) + "<p>");
-        document.write("<p>Down Payment: $" + downPayment.toFixed(2) + "<p>");
+        document.write("<p>Vehicle Price: $" + 
+            vehiclePrice.toLocaleString("en-US", {'minimumFractionDigits': 2, 'maximumFractionDigits':2}) + "<p>");
+        document.write("<p>Down Payment: $" + 
+            downPayment.toLocaleString("en-US", {'minimumFractionDigits': 2, 'maximumFractionDigits':2}) + "<p>");
         document.write("<p>Interest Rate: " + interestRate + "%<p>");
-        document.write("<p>Loan Amount: $" + loanAmount.toFixed(2) + "<p>");
+        document.write("<p>Loan Amount: $" + 
+            loanAmount.toLocaleString("en-US", {'minimumFractionDigits': 2, 'maximumFractionDigits':2}) + "<p>");
 
         document.write("<pre>     # of Years         Payment/Month</pre>");
 
